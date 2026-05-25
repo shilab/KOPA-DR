@@ -21,49 +21,6 @@ To address this limitation, **KoPA-DR** extends KoPA with:
 
 ---
 
-# Key Features
-
-* Structure-aware LLM reasoning using graph prefix adaptation
-* DDI-aware safety regularization
-* Disease-centric drug interaction topology tracing
-* Parameter-efficient LoRA adaptation
-* Biomedical KG completion on PrimeKG
-* Drug repurposing evaluation pipeline
-
----
-
-# Method Overview
-
-KoPA-DR consists of two stages:
-
-## 1. KoPA Backbone (Inherited)
-
-The original KoPA framework injects graph structural information into a frozen LLM through prefix-based adaptation.
-
-Pipeline:
-
-```text
-Biomedical KG
-→ Graph Structure Encoding
-→ Prefix-based Structure Injection
-→ Frozen LLM Reasoning
-→ KG Completion
-```
-
-## 2. DDI-aware Safety Learning (Our Contribution)
-
-KoPA-DR introduces disease-centric DDI topology tracing and safety-aware regularization.
-
-The DDI topology captures:
-
-* co-treatment overlap
-* adverse drug reaction (ADR) overlap
-* local interaction topology proximity
-
-These safety-aware signals regularize prefix optimization toward clinically safer biomedical reasoning.
-
----
-
 # Installation
 
 ```bash
